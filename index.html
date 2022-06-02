@@ -38,11 +38,41 @@
         </nav>
     </div>
 
+    <div id="fake-tab-container">
+        <h2 id="dash">Dashboard</h2>
+        <div id="fake-tab"></div>
+    </div>
 
     <main class="main-container">
-        <div class="traffic">Traffic</div>
-        <div class="daily-traffic">D Traffic</div>
-        <div class="mobile-users">M Users</div>
+        <div class="traffic">
+            <h2 id="traffic-header">Traffic</h2>
+            <div id="hour-btn">Hourly</div>
+            <div id="daily-btn">Daily</div>
+            <div id="weekly-btn">Weekly</div>
+            <div id="monthly-btn">Monthly</div>
+
+            <div id="traffic-chart-container">
+                <canvas id="traffic-chart"></canvas>
+            </div>
+
+        </div>
+
+
+        <div class="daily-traffic">
+            <h2 id="daily-traffic-header">Daily Traffic</h2>
+            <div id="traffic-chart-container">
+                <canvas id="daily-traffic-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="mobile-users">
+            <h2 id="mobile-users-header">Daily Traffic</h2>
+            <div id="mobile-users-container">
+                <canvas id="mobile-users-chart"></canvas>
+            </div>
+        </div>
+
+
         <div class="social-stats">S stats</div>
         <div class="new-members">N Members</div>
         <div class="recent-activity">R Activity</div>
