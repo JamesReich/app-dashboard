@@ -15,9 +15,9 @@
     <title>Dashboard</title>
 </head>
 
-<body>
+<body class="grid-container">
 
-    <div id="header-container">
+    <div class="header-container">
         <header>
             <h1 id="logo">Web</h1>
             <h1 id="logo2">App&#8482</h1>
@@ -29,7 +29,7 @@
         </header>
     </div>
 
-    <div id="nav-container">
+    <div class="nav-container">
         <nav>
             <a href="#dashboard"><img src="svgs/home.svg" alt="" class="nav-icon"></a>
             <a href="#visits"><img src="svgs/bar-chart.svg" alt="" class="nav-icon"></a>
@@ -38,13 +38,14 @@
         </nav>
     </div>
 
-    <div id="fake-tab-container">
-        <h2 id="dash">Dashboard</h2>
-        <div id="fake-tab"></div>
-    </div>
+
 
     <!-- BEGINNING OF MAIN -->
     <main class="main-container">
+        <div id="fake-tab-container">
+            <h2 id="dash">Dashboard</h2>
+            <div id="fake-tab"></div>
+        </div>
         <div class="traffic">
             <h2 id="traffic-header">Traffic</h2>
             <div id="hour-btn">Hourly</div>
@@ -152,11 +153,51 @@
         </div>
 
 
-        <div class="recent-activity">R Activity</div>
+        <div class="recent-activity">
+
+            <h2 id="recent-activity-header">Recent Activity</h2>
+
+            <div class="recent-activity-wrapper">
+
+                <img class="user-profile-photo" src="images/member-1.jpg" alt="user profile picture">
+                <div class="user-action">Victoria Chambers commented on</div>
+                <div class="action-target">WebApp's SEO Tips</div>
+                <div class="activity-time">4 hours ago</div>
+
+            </div>
+
+            <div class="recent-activity-wrapper">
+
+                <img class="user-profile-photo" src="images/member-2.jpg" alt="user profile picture">
+                <div class="user-action">Dale Byrd liked the post</div>
+                <div class="action-target">Facebook's Changes for 2021</div>
+                <div class="activity-time">5 hours ago</div>
+
+            </div>
+
+            <div class="recent-activity-wrapper">
+
+                <img class="user-profile-photo" src="images/member-3.jpg" alt="user profile picture">
+                <div class="user-action">Dawn Wood commented on</div>
+                <div class="action-target">Facebook's Changes for 2021</div>
+                <div class="activity-time">5 hours ago</div>
+
+            </div>
+
+            <div class="recent-activity-wrapper">
+
+                <img class="user-profile-photo" src="images/member-4.jpg" alt="user profile picture">
+                <div class="user-action">Dan Oliver posted</div>
+                <div class="action-target">WebApp's SEO Tips</div>
+                <div class="activity-time">1 day ago</div>
+
+            </div>
+        </div>
+
+
         <div class="message-user">Message</div>
         <div class="settings">Settings</div>
     </main>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
         integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="

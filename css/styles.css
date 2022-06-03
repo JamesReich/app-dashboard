@@ -14,7 +14,7 @@ body {
 
 /* HEADER CONTENT */
 
-#header-container,
+/* #header-container,
 #nav-container {
 
     display: flex;
@@ -22,7 +22,38 @@ body {
     justify-content: space-between;
     height: 100px;
 
+} */
+
+.header-container {
+
+    grid-area: header;
+
 }
+
+.nav-container {
+
+    grid-area: navigation;
+
+}
+
+.main-container {
+
+    grid-area: main;
+
+}
+
+.grid-container {
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "navigation"
+        "main";
+}
+
+
 
 nav {
 
@@ -32,15 +63,12 @@ nav {
     align-content: center;
     align-items: center;
     justify-content: space-evenly;
+    height: auto;
     width: 100vw;
 
 }
 
-#nav-container {
 
-    height: 60px;
-
-}
 
 .nav-icon {
 
@@ -72,7 +100,10 @@ nav {
 
 }
 
+
+
 header {
+
     display: flex;
     align-content: center;
     align-items: center;
@@ -136,10 +167,9 @@ header {
 
 .main-container {
 
-
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1em 1em;
+    gap: 1em 1em; */
 
 }
 
@@ -197,7 +227,8 @@ header {
 #daily-traffic-header,
 #mobile-users-header,
 #social-stats-header,
-#new-members-header {
+#new-members-header,
+#recent-activity-header {
 
     margin: 10px 10px -5px 3px;
     width: 100%;
@@ -230,11 +261,12 @@ header {
 .social-container {
 
     width: 90%;
+    height: fit-content;
     display: flex;
     background-color: rgba(211, 209, 209, 0.2);
     border: 1px rgba(170, 170, 170, 0.4) solid;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     margin: 20px auto;
 
 }
@@ -242,17 +274,22 @@ header {
 .svg-wrapper {
 
     background-color: #5488CF;
-    width: 100%;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-content: center;
     border-radius: 50%;
 
+
 }
 
 .social-icon {
 
-    width: 50%;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    justify-self: center;
     filter: invert(1);
 }
 
@@ -285,7 +322,8 @@ header {
 
 }
 
-.new-members-wrapper {
+.new-members-wrapper,
+.recent-activity-wrapper {
 
     display: flex;
     flex-direction: column;
@@ -310,9 +348,26 @@ header {
 }
 
 .user-name,
-.sign-up-date {
+.sign-up-date,
+.activity-time {
 
     text-align: center;
+
+}
+
+.user-action,
+.action-target {
+
+
+    width: fit-content;
+    align-self: center;
+    overflow-wrap: break-word;
+
+}
+
+.action-target {
+
+    font-weight: 700;
 
 }
 
@@ -321,5 +376,21 @@ header {
     color: #5488CF;
     text-align: center;
     margin: 2px;
+
+}
+
+
+
+@media (min-width: 768px) {
+
+    .grid-container {
+
+        grid-template-columns: 55px 1fr;
+        grid-template-areas:
+            "header header"
+            "navigation main";
+    }
+
+
 
 }
