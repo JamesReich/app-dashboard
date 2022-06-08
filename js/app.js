@@ -7,46 +7,35 @@ const monthlyBtn = document.getElementById('monthly-btn');
 
 const tc = document.getElementById('traffic-chart').getContext('2d');
 
-hourBtn.addEventListener('click', (e) => {
+function setActive() {
+
+    let trafficButtons = [hourBtn, dailyBtn, weeklyBtn, monthlyBtn];
+
+    trafficButtons.forEach(item => {
 
 
-    hourBtn.className = 'active';
-    dailyBtn.className = '';
-    weeklyBtn.className = '';
-    monthlyBtn.className = '';
+
+        item.addEventListener('click', event => {
 
 
-});
-dailyBtn.addEventListener('click', () => {
+            if (item.className === 'active') {
+
+                item.className = '';
+
+            } else {
 
 
-    hourBtn.className = '';
-    dailyBtn.className = 'active';
-    weeklyBtn.className = '';
-    monthlyBtn.className = '';
+                item.className = 'active';
+
+            }
+        });
 
 
-});
-weeklyBtn.addEventListener('click', () => {
 
+    });
+}
 
-    hourBtn.className = '';
-    dailyBtn.className = '';
-    weeklyBtn.className = 'active';
-    monthlyBtn.className = '';
-
-
-});
-monthlyBtn.addEventListener('click', () => {
-
-
-    hourBtn.className = '';
-    dailyBtn.className = '';
-    weeklyBtn.className = '';
-    monthlyBtn.className = 'active';
-
-
-});
+setActive();
 
 const trafficChart = new Chart(tc, {
     type: 'line',
