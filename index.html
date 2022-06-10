@@ -198,8 +198,58 @@
         </div>
 
 
-        <div class="message-user">Message</div>
-        <div class="settings">Settings</div>
+        <div class="message-user">
+
+            <h2 id="message-user-header">Message User</h2>
+
+            <div class="message-form-wrapper">
+                <form action="">
+
+                    <input type="search" name="search-user-name" id="search-user-name" placeholder="Search for user">
+
+                    <textarea name="message-user" id="message-user-box" cols="30" rows="10"
+                        placeholder="Message for user"></textarea>
+
+                    <button type="submit" id="message-user-btn">SEND</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="settings">
+            <h2 id="settings-header">Settings</h2>
+
+            <div class="settings-wrapper">
+                <label for="email-notif" id="email-notif">Send Email Notifications</label>
+                <div class="btn-wrapper">
+                    <img class="toggle-btn" src="images/SVG/on.svg" alt="">
+                </div>
+            </div>
+
+            <div class="settings-wrapper">
+                <label for="profile-vis" id="profile-vis">Set Profile to Public</label>
+                <div class="btn-wrapper">
+                    <img class="toggle-btn" src="images/SVG/on.svg" alt="">
+                </div>
+            </div>
+
+            <div class="timezone-wrapper">
+
+                <select name="timezone" id="timezone">
+                    <option value="none" selected disabled hidden>Select Timezone</option>
+                    <option value="pt">Pacific Time UTC -08:00</option>
+                    <option value="mt">Mountain Time UTC -07:00</option>
+                    <option value="ct">Central Time UTC -06:00</option>
+                    <option value="et">Eastern Time UTC -05:00</option>
+                </select>
+            </div>
+
+            <div class="settings-button-wrapper">
+                <button class="setting-btn save" type="submit">Save</button>
+                <button class="setting-btn clear" type="reset">Clear</button>
+            </div>
+
+        </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"

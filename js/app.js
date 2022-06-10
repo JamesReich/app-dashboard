@@ -2,6 +2,7 @@ const hourBtn = document.getElementById('hour-btn');
 const dailyBtn = document.getElementById('daily-btn');
 const weeklyBtn = document.getElementById('weekly-btn');
 const monthlyBtn = document.getElementById('monthly-btn');
+const toggleBtn = document.getElementsByClassName('toggle-btn');
 
 
 
@@ -36,6 +37,42 @@ function setActive() {
 }
 
 setActive();
+
+toggleBtn[0].addEventListener('click', () => {
+
+    if (toggleBtn[0].classList.contains("toggle-off")) {
+
+        toggleBtn[0].src = 'images/SVG/on.svg';
+
+        toggleBtn[0].classList.remove("toggle-off");
+
+    } else if (toggleBtn[0].classList.contains("toggle-btn")) {
+
+        toggleBtn[0].src = 'images/SVG/off.svg';
+
+        toggleBtn[0].classList.add("toggle-off");
+
+    }
+
+});
+
+toggleBtn[1].addEventListener('click', () => {
+
+    if (toggleBtn[1].classList.contains("toggle-off")) {
+
+        toggleBtn[1].src = 'images/SVG/on.svg';
+
+        toggleBtn[1].classList.remove("toggle-off");
+
+    } else if (toggleBtn[1].classList.contains("toggle-btn")) {
+
+        toggleBtn[1].src = 'images/SVG/off.svg';
+
+        toggleBtn[1].classList.add("toggle-off");
+
+    }
+
+});
 
 const trafficChart = new Chart(tc, {
     type: 'line',
