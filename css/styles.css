@@ -182,7 +182,9 @@ header {
 .daily-traffic,
 .mobile-users,
 .social-stats,
-.new-members {
+.new-members,
+.recent-activity,
+.message-user {
 
     border-bottom: 2px solid rgba(34, 34, 34, 0.1);
     padding-bottom: 10px;
@@ -385,8 +387,8 @@ header {
     display: flex;
     align-content: center;
     justify-content: center;
-
-    margin: 30px 0;
+    width: 90%;
+    margin: 30px auto;
 
 }
 
@@ -526,6 +528,7 @@ textarea::placeholder {
     display: flex;
     align-content: center;
     justify-content: center;
+    margin: 5px;
 
 }
 
@@ -575,6 +578,8 @@ select {
 
     }
 
+
+
     .traffic-btn-bar {
 
         width: 50%;
@@ -583,9 +588,12 @@ select {
 
     }
 
+
+
     .main-container {
 
         grid-template-columns: 50%;
+        width: calc(100vw - 55px);
 
     }
 
@@ -596,7 +604,10 @@ select {
         grid-column: 1 / span 2;
     }
 
-    .daily-traffic,
+    .daily-traffic {
+        grid-column: 1 / span 1;
+    }
+
     .message-user,
     .settings {
         grid-column: 1 / span 1;
@@ -616,8 +627,8 @@ select {
     .settings {
 
 
-        width: 100%;
-        max-width: 100%;
+        width: calc(100% - 55px);
+
 
     }
 
@@ -638,6 +649,8 @@ select {
 
 
     }
+
+
 
     #traffic-chart-container {
         margin: 0 auto;
@@ -696,9 +709,21 @@ select {
     .message-user,
     .settings {
 
+        width: calc(100vw - 100px);
+
+
+
+    }
+
+    .settings-wrapper {
+
+        width: 50%;
+
+    }
+
+    form {
+
         width: 100%;
-        height: 100px;
-        background-color: red;
 
     }
 
