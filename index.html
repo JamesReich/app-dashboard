@@ -25,6 +25,7 @@
 
             <div class="user-head">
                 <img src="svgs/bell.svg" alt="" id="noti-bell">
+                <div class="noti-icon"></div>
                 <div id="user-photo-container">
                     <img src="images/member-1.jpg" alt="" id="user-photo">
                 </div>
@@ -249,16 +250,40 @@
             <h2 id="message-user-header">Message User</h2>
 
             <div class="message-form-wrapper">
-                <form action="msg-user">
+                <form action="#message-user-header" onsubmit="event.preventDefault()">
 
-                    <input type="search" name="search-user-name" id="search-user-name" placeholder="Search for user">
+                    <input type="search" name="search-user-name" id="search-user-name" onkeyup="searchUser()"
+                        placeholder="Search for user">
 
                     <textarea name="message-user" id="message-user-box" cols="30" rows="10"
                         placeholder="Message for user"></textarea>
 
-                    <button type="submit" id="message-user-btn">SEND</button>
+                    <div id="sent-success-wrapper">
+                        <div id="sent-success">Message sent succesfully...</div>
+                    </div>
+                    <div id="sent-failed-wrapper">
+                        <div id="sent-failed">Message failed to send...</div>
+                    </div>
+
+                    <button onclick="submitForm()" type="submit" id="message-user-btn">SEND</button>
 
                 </form>
+
+                <ul id="user-list">
+                    <li>
+                        <button class="user-result" onclick="fillResult()">Victoria Chambers</button>
+                    </li>
+                    <li>
+                        <button class="user-result" onclick="fillResult()">Dale Byrd</button>
+                    </li>
+                    <li>
+                        <button class="user-result" onclick="fillResult()">Dawn Wood</button>
+                    </li>
+                    <li>
+                        <button class="user-result" onclick="fillResult()">Dan Oliver</button>
+                    </li>
+                </ul>
+
             </div>
         </div>
 
@@ -291,7 +316,7 @@
             </div>
 
             <div class="settings-button-wrapper">
-                <button class="setting-btn save" type="submit">Save</button>
+                <button class="setting-btn save" type="submit" onclick="populateStorage()">Save</button>
                 <button class="setting-btn clear" type="reset">Clear</button>
             </div>
 

@@ -5,14 +5,136 @@ const monthlyBtn = document.getElementById('monthly-btn');
 const toggleBtn = document.getElementsByClassName('toggle-btn');
 const alertBtn = document.querySelector('.alert-btn');
 const alertBanner = document.querySelector('.alert-wrapper');
-
+const notiIcon = document.querySelector('.noti-icon');
+const userList = document.getElementById('user-list');
+const sentSuccess = document.getElementById('sent-success-wrapper');
+const sentFailed = document.getElementById('sent-failed-wrapper');
 
 
 alertBtn.addEventListener('click', () => {
 
     alertBanner.style.display = 'none';
 
+    notiIcon.classList.remove('noti-icon');
+
+
 });
+
+sentSuccess.style.visibility = 'hidden'
+sentFailed.style.visibility = 'hidden'
+userList.style.visibility = 'hidden';
+
+function searchUser() {
+
+    userList.style.visibility = 'visible';
+    // Declare variables
+    let input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('search-user-name');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById('user-list');
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].querySelectorAll(".user-result")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+
+
+}
+
+function fillResult() {
+
+    let input = document.getElementById('search-user-name');
+
+    const userResult = document.querySelectorAll('.user-result');
+
+    for (let i = 0; i < userResult.length; i++) {
+
+        let result = userResult[i].innerHTML;
+
+        if (result) {
+
+            input.value = result;
+
+        }
+
+        console.log(result);
+    }
+
+
+
+    userList.style.visibility = 'hidden';
+
+}
+
+function populateStorage() {
+
+    localStorage.setItem('svg', 'off.svg');
+
+
+}
+
+function submitForm() {
+
+    let input = document.getElementById('search-user-name');
+    let messageBox = document.getElementById('message-user-box');
+
+    if (input.value == '') {
+
+        sentFailed.style.visibility = 'visible';
+        sentSuccess.style.visibility = 'hidden';
+
+        input.style.border = '#d05050 1px solid';
+        input.placeholder = 'Please enter a user name...';
+
+
+
+    } else {
+
+        sentSuccess.style.visibility = 'visible';
+        sentFailed.style.visibility = 'hidden';
+
+        input.style.border = '1px rgba(141, 141, 142, 0.4) solid';
+        input.value = '';
+        input.placeholder = 'Search for a user';
+
+
+    }
+
+    if (messageBox.value == '') {
+
+        sentFailed.style.visibility = 'visible';
+        sentSuccess.style.visibility = 'hidden';
+
+        messageBox.style.border = '#d05050 1px solid';
+        messageBox.placeholder = 'Please enter a message...';
+
+
+
+    } else {
+
+        sentSuccess.style.visibility = 'visible';
+        sentFailed.style.visibility = 'hidden';
+
+        messageBox.style.border = '1px rgba(141, 141, 142, 0.4) solid';
+        messageBox.value = '';
+        messageBox.placeholder = 'Message for user';
+
+
+    }
+
+
+
+
+}
+
+
 
 const tc = document.getElementById('traffic-chart').getContext('2d');
 
