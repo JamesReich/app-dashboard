@@ -48,26 +48,14 @@ function searchUser() {
 
 }
 
-function fillResult() {
+
+function fillResult(btn) {
 
     let input = document.getElementById('search-user-name');
 
     const userResult = document.querySelectorAll('.user-result');
 
-    for (let i = 0; i < userResult.length; i++) {
-
-        let result = userResult[i].innerHTML;
-
-        if (result) {
-
-            input.value = result;
-
-        }
-
-        console.log(result);
-    }
-
-
+    input.value = btn.innerHTML;
 
     userList.style.visibility = 'hidden';
 
