@@ -3,8 +3,16 @@ const dailyBtn = document.getElementById('daily-btn');
 const weeklyBtn = document.getElementById('weekly-btn');
 const monthlyBtn = document.getElementById('monthly-btn');
 const toggleBtn = document.getElementsByClassName('toggle-btn');
+const alertBtn = document.querySelector('.alert-btn');
+const alertBanner = document.querySelector('.alert-wrapper');
 
 
+
+alertBtn.addEventListener('click', () => {
+
+    alertBanner.style.display = 'none';
+
+});
 
 const tc = document.getElementById('traffic-chart').getContext('2d');
 

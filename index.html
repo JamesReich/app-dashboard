@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,20 +22,23 @@
         <header>
             <h1 id="logo">Web</h1>
             <h1 id="logo2">App&#8482</h1>
-            <img src="svgs/bell.svg" alt="" id="noti-bell">
-            <div id="user-photo-container">
-                <img src="images/member-1.jpg" alt="" id="user-photo">
+
+            <div class="user-head">
+                <img src="svgs/bell.svg" alt="" id="noti-bell">
+                <div id="user-photo-container">
+                    <img src="images/member-1.jpg" alt="" id="user-photo">
+                </div>
+                <div id="user-name">Student Name</div>
             </div>
-            <div id="user-name">Student Name</div>
         </header>
     </div>
 
     <div class="nav-container">
         <nav>
-            <a href="#dashboard"><img src="svgs/home.svg" alt="" class="nav-icon"></a>
-            <a href="#visits"><img src="svgs/bar-chart.svg" alt="" class="nav-icon"></a>
-            <a href="#members"><img src="svgs/members.svg" alt="" class="nav-icon"></a>
-            <a href="#settings"><img src="svgs/settings.svg" alt="" class="nav-icon"></a>
+            <a href="#dash"><img src="svgs/home.svg" alt="" class="nav-icon"></a>
+            <a href="#traffic-header"><img src="svgs/bar-chart.svg" alt="" class="nav-icon"></a>
+            <a href="#new-members-header"><img src="svgs/members.svg" alt="" class="nav-icon"></a>
+            <a href="#settings-header"><img src="svgs/settings.svg" alt="" class="nav-icon"></a>
         </nav>
     </div>
 
@@ -45,6 +49,13 @@
 
     <!-- BEGINNING OF MAIN -->
     <main class="main-container">
+
+        <div class="alert-wrapper">
+
+            <div class="alert">Alert: You have unread messages</div>
+            <div class="alert-btn">x</div>
+
+        </div>
 
         <div class="traffic">
             <h2 id="traffic-header">Traffic</h2>
@@ -121,36 +132,52 @@
             <div class="new-members-wrapper">
 
                 <img class="user-profile-photo" src="images/member-1.jpg" alt="user profile picture">
-                <div class="user-name">Victoria Chambers</div>
-                <div class="user-email">victoria.chambers80@example.com</div>
-                <div class="sign-up-date">10/15/20</div>
+                <div class="user-contact">
+                    <div class="user-name">Victoria Chambers</div>
+                    <div class="user-email">victoria.chambers80@example.com</div>
+                </div>
+                <div class="date-wrapper">
+                    <div class="sign-up-date">10/15/20</div>
+                </div>
 
             </div>
 
             <div class="new-members-wrapper">
 
                 <img class="user-profile-photo" src="images/member-2.jpg" alt="user profile picture">
-                <div class="user-name">Dale Byrd</div>
-                <div class="user-email">dale.byrd52@example.com</div>
-                <div class="sign-up-date">10/15/20</div>
+                <div class="user-contact">
+                    <div class="user-name">Dale Byrd</div>
+                    <div class="user-email">dale.byrd52@example.com</div>
+                </div>
+                <div class="date-wrapper">
+                    <div class="sign-up-date">10/15/20</div>
+                </div>
 
             </div>
 
             <div class="new-members-wrapper">
 
                 <img class="user-profile-photo" src="images/member-3.jpg" alt="user profile picture">
-                <div class="user-name">Dawn Wood</div>
-                <div class="user-email">dawn.wood16@example.com</div>
-                <div class="sign-up-date">10/15/20</div>
+                <div class="user-contact">
+                    <div class="user-name">Dawn Wood</div>
+                    <div class="user-email">dawn.wood16@example.com</div>
+                </div>
+                <div class="date-wrapper">
+                    <div class="sign-up-date">10/15/20</div>
+                </div>
 
             </div>
 
             <div class="new-members-wrapper">
 
                 <img class="user-profile-photo" src="images/member-4.jpg" alt="user profile picture">
-                <div class="user-name">Dan Oliver</div>
-                <div class="user-email">dan.oliver82@example.com</div>
-                <div class="sign-up-date">10/15/20</div>
+                <div class="user-contact">
+                    <div class="user-name">Dan Oliver</div>
+                    <div class="user-email">dan.oliver82@example.com</div>
+                </div>
+                <div class="date-wrapper">
+                    <div class="sign-up-date">10/15/20</div>
+                </div>
 
             </div>
         </div>
@@ -163,36 +190,55 @@
             <div class="recent-activity-wrapper">
 
                 <img class="user-profile-photo" src="images/member-1.jpg" alt="user profile picture">
-                <div class="user-action">Victoria Chambers commented on</div>
-                <div class="action-target">WebApp's SEO Tips</div>
-                <div class="activity-time">4 hours ago</div>
+                <div class="action-wrapper">
+                    <div class="user-action">Victoria Chambers commented on</div>
+                    <div class="action-target">WebApp's SEO Tips</div>
+                </div>
+
+                <div class="at-wrapper">
+                    <div class="activity-time">4 hours ago</div>
+                </div>
 
             </div>
 
             <div class="recent-activity-wrapper">
 
                 <img class="user-profile-photo" src="images/member-2.jpg" alt="user profile picture">
-                <div class="user-action">Dale Byrd liked the post</div>
-                <div class="action-target">Facebook's Changes for 2021</div>
-                <div class="activity-time">5 hours ago</div>
+
+                <div class="action-wrapper">
+                    <div class="user-action">Dale Byrd liked the post</div>
+                    <div class="action-target">Facebook's Changes for 2021</div>
+                </div>
+
+                <div class="at-wrapper">
+                    <div class="activity-time">5 hours ago</div>
+                </div>
 
             </div>
 
             <div class="recent-activity-wrapper">
 
                 <img class="user-profile-photo" src="images/member-3.jpg" alt="user profile picture">
-                <div class="user-action">Dawn Wood commented on</div>
-                <div class="action-target">Facebook's Changes for 2021</div>
-                <div class="activity-time">5 hours ago</div>
+                <div class="action-wrapper">
+                    <div class="user-action">Dawn Wood commented on</div>
+                    <div class="action-target">Facebook's Changes</div>
+                </div>
+                <div class="at-wrapper">
+                    <div class="activity-time">5 hours ago</div>
+                </div>
 
             </div>
 
             <div class="recent-activity-wrapper">
 
                 <img class="user-profile-photo" src="images/member-4.jpg" alt="user profile picture">
-                <div class="user-action">Dan Oliver posted</div>
-                <div class="action-target">WebApp's SEO Tips</div>
-                <div class="activity-time">1 day ago</div>
+                <div class="action-wrapper">
+                    <div class="user-action">Dan Oliver posted</div>
+                    <div class="action-target">WebApp's SEO Tips</div>
+                </div>
+                <div class="at-wrapper">
+                    <div class="activity-time">1 day ago</div>
+                </div>
 
             </div>
         </div>
