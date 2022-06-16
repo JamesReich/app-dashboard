@@ -12,6 +12,16 @@ const sentFailed = document.getElementById('sent-failed-wrapper');
 const notiTray = document.getElementById('noti-tray-wrapper');
 const notiBell = document.getElementById('noti-bell');
 const notibtn = document.getElementsByClassName('noti-tray-btn');
+const userSrch = document.getElementById('search-user-name');
+
+userSrch.addEventListener('focus', () => {
+
+    ul = document.getElementById('user-list');
+    li = ul.getElementsByTagName('li');
+
+    ul.style.visibility = "visible";
+
+});
 
 
 
