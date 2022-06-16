@@ -113,19 +113,7 @@ function submitForm() {
 
 
 
-    } else {
-
-        sentSuccess.style.visibility = 'visible';
-        sentFailed.style.visibility = 'hidden';
-
-        input.style.border = '1px rgba(141, 141, 142, 0.4) solid';
-        input.value = '';
-        input.placeholder = 'Search for a user';
-
-
-    }
-
-    if (messageBox.value == '') {
+    } else if (messageBox.value == '') {
 
         sentFailed.style.visibility = 'visible';
         sentSuccess.style.visibility = 'hidden';
@@ -133,6 +121,18 @@ function submitForm() {
         messageBox.style.border = '#d05050 1px solid';
         messageBox.placeholder = 'Please enter a message...';
 
+
+
+    } else if (messageBox.value == '' && input.value == '') {
+
+        sentFailed.style.visibility = 'visible';
+        sentSuccess.style.visibility = 'hidden';
+
+        messageBox.style.border = '#d05050 1px solid';
+        messageBox.placeholder = 'Please enter a message...';
+
+        input.style.border = '#d05050 1px solid';
+        input.placeholder = 'Please enter a user name...';
 
 
     } else {
@@ -143,7 +143,9 @@ function submitForm() {
         messageBox.style.border = '1px rgba(141, 141, 142, 0.4) solid';
         messageBox.value = '';
         messageBox.placeholder = 'Message for user';
-
+        input.style.border = '1px rgba(141, 141, 142, 0.4) solid';
+        input.value = '';
+        input.placeholder = 'Search for a user';
 
     }
 
