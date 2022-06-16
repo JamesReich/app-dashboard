@@ -1003,6 +1003,24 @@ select {
 
     }
 
+    .angle-wrapper {
+
+        display: flex;
+        align-content: center;
+        justify-content: flex-end;
+        flex-grow: 2;
+
+    }
+
+    .angle-right {
+
+
+        padding: 10px;
+        font-weight: 700;
+        color: #4275bc;
+
+    }
+
 
     .new-members-wrapper {
 
