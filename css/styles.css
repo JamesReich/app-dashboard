@@ -379,6 +379,12 @@ header {
 
 }
 
+.angle-wrapper {
+
+    display: none;
+
+}
+
 .svg-wrapper {
 
     background-color: #5488CF;
@@ -1037,6 +1043,7 @@ select {
     .user-profile-photo {
 
         width: 50px;
+        ;
 
     }
 
@@ -1066,6 +1073,7 @@ select {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        padding: 10px;
         width: 90%;
 
     }
@@ -1172,7 +1180,7 @@ select {
 
         margin-bottom: 1px;
 
-        padding: 14px;
+        padding: 18px;
 
 
 
