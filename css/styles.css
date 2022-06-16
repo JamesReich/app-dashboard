@@ -690,7 +690,7 @@ textarea::placeholder {
     width: 85%;
     outline: none;
     border: 1px rgba(141, 141, 142, 0.4) solid;
-    color: rgba(141, 141, 142, 0.4);
+    color: rgba(141, 141, 142, 0.793);
     height: 45px;
     border-radius: 10px;
     background-color: #f1eeef;
@@ -749,7 +749,6 @@ select {
     background-position-y: 10px;
     border-radius: 2px;
     margin-right: 2rem;
-    padding: 1rem;
     padding-right: 2rem;
 }
 
