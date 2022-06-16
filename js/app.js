@@ -9,6 +9,10 @@ const notiIcon = document.querySelector('.noti-icon');
 const userList = document.getElementById('user-list');
 const sentSuccess = document.getElementById('sent-success-wrapper');
 const sentFailed = document.getElementById('sent-failed-wrapper');
+const notiTray = document.getElementById('noti-tray-wrapper');
+const notiBell = document.getElementById('noti-bell');
+const notibtn = document.getElementsByClassName('noti-tray-btn');
+
 
 
 alertBtn.addEventListener('click', () => {
@@ -23,6 +27,32 @@ alertBtn.addEventListener('click', () => {
 sentSuccess.style.visibility = 'hidden'
 sentFailed.style.visibility = 'hidden'
 userList.style.visibility = 'hidden';
+notiTray.style.visibility = 'hidden';
+
+notiBell.addEventListener('click', () => {
+
+    if (notiTray.style.visibility == 'hidden') {
+
+        notiTray.style.visibility = 'visible';
+
+    } else if (notiTray.style.visibility == 'visible') {
+
+        notiTray.style.visibility = 'hidden';
+
+    }
+
+});
+
+function removeNoti(btn) {
+
+    let previous = btn.previousSibling;
+
+    previous.parentNode.removeChild(previous);
+    btn.style.display = 'none';
+
+
+
+}
 
 function searchUser() {
 

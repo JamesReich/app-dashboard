@@ -74,6 +74,40 @@ nav {
 
 }
 
+.notification {
+
+    display: flex;
+    margin: 5px 0;
+    border-bottom: #5488CF 1px solid;
+
+}
+
+.noti-tray-btn {
+
+    margin-left: 5px;
+    color: #8a8688;
+
+}
+
+#noti-tray-wrapper {
+
+    position: absolute;
+    background-color: #f1eeef;
+    border: #5488CF 1px solid;
+    color: #4275bc;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 220px;
+    margin-top: 175px;
+    margin-left: 90px;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 100;
+
+
+}
+
 
 
 .nav-icon {
@@ -850,6 +884,19 @@ select {
 
     }
 
+    #noti-tray-wrapper {
+
+
+        width: 320px;
+        margin-top: 200px;
+        margin-left: 400px;
+        border-radius: 5px;
+        padding: 5px;
+        z-index: 100;
+
+
+    }
+
     .date-wrapper {
 
         flex-grow: 1;
@@ -1147,6 +1194,19 @@ select {
         margin: 5px 0;
         background-color: #5488CF;
         color: #f1eeef;
+
+    }
+
+    #noti-tray-wrapper {
+
+
+        width: 320px;
+        margin-top: 200px;
+        margin-left: 700px;
+        border-radius: 5px;
+        padding: 5px;
+        z-index: 100;
+
 
     }
 
