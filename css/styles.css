@@ -46,11 +46,13 @@ body {
 .main-container {
 
     grid-area: main;
+    width: 100%;
 
 }
 
 .grid-container {
 
+    width: 100%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -164,7 +166,7 @@ nav {
     border-left: 1px rgb(184, 204, 219) solid;
     border-bottom: 1px rgb(184, 204, 219) solid;
     border-bottom-left-radius: 2px;
-    width: 100vw;
+    width: 100%;
 
 }
 
@@ -286,7 +288,7 @@ header {
     width: 100%;
     height: fit-content;
     margin: 0;
-    width: 100vw;
+    width: 100%;
 
 }
 
@@ -355,12 +357,12 @@ header {
 #traffic-chart-container {
 
     margin: auto 0;
-    width: 100vw;
+    width: 100%;
 }
 
 #mobile-users-container {
 
-    width: 100vw;
+    width: 100%;
     padding: 5px;
 
 
@@ -505,6 +507,8 @@ header {
 .main-container {
 
     display: grid;
+    width: 100%;
+
 
 
 }
@@ -789,8 +793,8 @@ select {
 
     #fake-tab-container {
 
-        width: calc(100vw - 55px);
-        max-width: 100%;
+        width: 100%;
+
 
     }
 
@@ -809,7 +813,7 @@ select {
     .main-container {
 
         grid-template-columns: 50%;
-        width: calc(100vw - 55px);
+        width: 100%;
 
     }
 
@@ -836,7 +840,7 @@ select {
 
     .message-user,
     .settings {
-        grid-column: 1 / span 1;
+        grid-column: 1 / span 2;
     }
 
     .mobile-users {
@@ -855,14 +859,14 @@ select {
     .settings {
 
 
-        width: calc(100% - 55px);
+        width: 100%;
 
 
     }
 
     .traffic {
 
-        width: calc(100vw - 55px);
+        width: 100%;
     }
 
 
@@ -874,7 +878,7 @@ select {
 
     .social-stats {
 
-        width: calc(100vw - 55px);
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -962,7 +966,7 @@ select {
     #traffic-chart-container {
         margin: 0 auto;
         padding: 30px;
-        width: 80vw;
+        width: 80%;
         max-width: 80%;
         height: fit-content;
 
@@ -1004,7 +1008,7 @@ select {
     .new-members,
     .recent-activity {
 
-        width: calc(100vw - 55px);
+        width: 100%;
 
     }
 
@@ -1080,7 +1084,7 @@ select {
     .message-user,
     .settings {
 
-        width: calc(100vw - 55px);
+        width: 100%;
 
 
 
@@ -1211,7 +1215,7 @@ select {
 
     .action-wrapper {
 
-        width: calc(100% - 63px);
+        width: calc(100% - 55px);
         margin-left: 2px;
     }
 
@@ -1238,7 +1242,7 @@ select {
 
         width: 320px;
         margin-top: 200px;
-        margin-left: 700px;
+        margin-left: 400px;
         border-radius: 5px;
         padding: 5px;
         z-index: 100;
