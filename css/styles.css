@@ -91,7 +91,9 @@ nav {
 
     display: flex;
     margin: 5px 0;
-    border-bottom: #5488CF 1px solid;
+
+    justify-content: flex-end;
+
 
 }
 
@@ -99,25 +101,57 @@ nav {
 
     margin-left: 5px;
     color: #8a8688;
+    cursor: pointer;
 
 }
+
+.noti-tray-btn:hover {
+
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.2);
+    color: #4275bc;
+
+}
+
+
+.noti-tray {
+
+
+    border-right: #5488CF 2px solid;
+    padding: 2px 5px;
+
+
+
+}
+
+.noti-tray:hover {
+
+    background-color: rgba(66, 117, 188, 0.1);
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+
 
 #noti-tray-wrapper {
 
     position: absolute;
     background-color: #f1eeef;
-    border: #5488CF 1px solid;
+    border-left: #5488CF 1px solid;
+    border-right: #5488CF 1px solid;
+    border-bottom: #5488CF 1px solid;
     color: #4275bc;
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 220px;
-    margin-top: 175px;
-    margin-left: 90px;
-    border-radius: 5px;
+    width: auto;
+    margin-top: 200px;
+    margin-left: 70px;
+    border-radius: 2px;
     padding: 5px;
     z-index: 100;
-
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
 }
 
@@ -999,7 +1033,7 @@ select {
 
         width: 40vw;
         height: 10vw;
-        margin: 22px auto;
+        margin: -22px auto;
 
     }
 
@@ -1241,8 +1275,8 @@ select {
 
 
         width: 320px;
-        margin-top: 200px;
-        margin-left: 400px;
+        margin-top: 215px;
+        margin-left: 560px;
         border-radius: 5px;
         padding: 5px;
         z-index: 100;

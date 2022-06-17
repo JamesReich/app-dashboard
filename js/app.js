@@ -24,7 +24,6 @@ userSrch.addEventListener('focus', () => {
 });
 
 
-
 alertBtn.addEventListener('click', () => {
 
     alertBanner.style.display = 'none';
@@ -164,39 +163,114 @@ function submitForm() {
 
 }
 
+hourBtn.className = 'active';
 
+const tch = document.getElementById('traffic-chart').getContext('2d');
 
-const tc = document.getElementById('traffic-chart').getContext('2d');
+const dataHourly = [40, 75, 80, 64, 42, 32, 64, 73, 59, 40, 20];
+const labelsHourly = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
 
-function setActive() {
+const dataDaily = [120, 450, 600, 250, 350, 380, 400, 650, 400, 370, 200];
+const labelsDaily = ['Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-    let trafficButtons = [hourBtn, dailyBtn, weeklyBtn, monthlyBtn];
+const dataWeekly = [300, 1050, 1200, 1600, 1500, 1750, 1450, 2850, 2250, 1500, 2500];
+const labelsWeekly = ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'];
 
-    trafficButtons.forEach(item => {
+const dataMonthly = [4250, 5250, 2500, 7600, 8500, 7450, 6000, 9450, 10000, 7250, 5250];
+const labelsMonthly = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'];
 
-
-
-        item.addEventListener('click', event => {
-
-
-            if (item.className === 'active') {
-
-                item.className = '';
-
-            } else {
-
-
-                item.className = 'active';
-
-            }
-        });
-
-
-
-    });
+function addData(data, labels) {
+    trafficChartHourly.data.datasets[0].data = data;
+    trafficChartHourly.data.labels = labels;
+    trafficChartHourly.update();
 }
 
-setActive();
+const trafficChartHourly = new Chart(tch, {
+    type: 'line',
+    data: {
+        labels: labelsHourly,
+        datasets: [{
+            label: 'Traffic',
+            data: dataHourly,
+            backgroundColor: [
+
+                'rgba(97, 149, 209, 0.3)'
+
+            ],
+            borderColor: [
+
+                'rgba(97, 149, 209, 1)',
+
+            ],
+            borderWidth: 1,
+            lineTension: 0.4,
+            fill: true,
+            aspectRatio: 2.5,
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+
+        },
+
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+
+    }
+});
+
+
+
+hourBtn.addEventListener('click', (e) => {
+
+    hourBtn.className = 'active';
+    dailyBtn.className = '';
+    weeklyBtn.className = '';
+    monthlyBtn.className = '';
+
+    addData(dataHourly, labelsHourly);
+
+});
+dailyBtn.addEventListener('click', () => {
+
+
+    hourBtn.className = '';
+    dailyBtn.className = 'active';
+    weeklyBtn.className = '';
+    monthlyBtn.className = '';
+
+    addData(dataDaily, labelsDaily);
+
+});
+weeklyBtn.addEventListener('click', () => {
+
+
+    hourBtn.className = '';
+    dailyBtn.className = '';
+    weeklyBtn.className = 'active';
+    monthlyBtn.className = '';
+
+    addData(dataWeekly, labelsWeekly);
+
+});
+monthlyBtn.addEventListener('click', () => {
+
+    hourBtn.className = '';
+    dailyBtn.className = '';
+    weeklyBtn.className = '';
+    monthlyBtn.className = 'active';
+
+    addData(dataMonthly, labelsMonthly);
+
+});
+
+
 
 toggleBtn[0].addEventListener('click', () => {
 
@@ -234,44 +308,7 @@ toggleBtn[1].addEventListener('click', () => {
 
 });
 
-const trafficChart = new Chart(tc, {
-    type: 'line',
-    data: {
-        labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31',],
-        datasets: [{
-            label: 'Traffic',
-            data: [750, 1250, 1000, 2000, 1500, 1750, 1400, 1900, 2300, 1500, 2500],
-            backgroundColor: [
 
-                'rgba(97, 149, 209, 0.3)'
-
-            ],
-            borderColor: [
-
-                'rgba(97, 149, 209, 1)',
-
-            ],
-            borderWidth: 1,
-            lineTension: 0.4,
-            fill: true
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-
-        },
-
-        plugins: {
-            legend: {
-                display: false
-            }
-        }
-
-    }
-});
 
 const dtc = document.getElementById('daily-traffic-chart').getContext('2d');
 const dailyTrafficChart = new Chart(dtc, {
@@ -287,7 +324,8 @@ const dailyTrafficChart = new Chart(dtc, {
 
             ],
             borderWidth: 1,
-            fill: true
+            fill: true,
+            aspectRatio: 2.5,
         }]
     },
     options: {
@@ -324,10 +362,12 @@ const mobileUser = new Chart(mu, {
 
             ],
             borderWidth: 0,
-            fill: true
+            fill: true,
+            aspectRatio: 1.9,
         }]
     },
     options: {
+        maintainAspectRatio: false,
         scales: {
             yAxes: [{
                 gridLines: {
