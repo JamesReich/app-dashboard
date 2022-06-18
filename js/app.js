@@ -1,3 +1,9 @@
+/**************************
+ **************************
+ ****     VARIABLES    ****
+ **************************
+ **************************/
+
 const hourBtn = document.getElementById('hour-btn');
 const dailyBtn = document.getElementById('daily-btn');
 const weeklyBtn = document.getElementById('weekly-btn');
@@ -13,6 +19,13 @@ const notiTray = document.getElementById('noti-tray-wrapper');
 const notiBell = document.getElementById('noti-bell');
 const notibtn = document.getElementsByClassName('noti-tray-btn');
 const userSrch = document.getElementById('search-user-name');
+const notif = document.getElementsByClassName('notification');
+let emailNotif = document.getElementById('email-setting');
+let publicProfile = document.getElementById('public-profile');
+let timezone = document.getElementById('timezone');
+let tzOptions = document.querySelectorAll('option');
+let saveBtn = document.getElementById('save-btn');
+let clearBtn = document.getElementById('clear-btn');
 
 userSrch.addEventListener('focus', () => {
 
@@ -27,9 +40,6 @@ userSrch.addEventListener('focus', () => {
 alertBtn.addEventListener('click', () => {
 
     alertBanner.style.display = 'none';
-
-    notiIcon.classList.remove('noti-icon');
-
 
 });
 
@@ -52,14 +62,36 @@ notiBell.addEventListener('click', () => {
 
 });
 
+function checkNotifHidden() {
+
+    let counter = 0;
+
+    for (let i = 0; i < notif.length; i++) {
+
+        if (notif[i].style.display == 'none') {
+
+            counter++;
+
+        }
+
+    }
+
+    if (counter >= notif.length) {
+
+        notiTray.style.display = "none";
+        alertBanner.style.display = 'none';
+
+        notiIcon.classList.remove('noti-icon');
+
+    }
+
+}
+
 function removeNoti(btn) {
 
-    let previous = btn.previousSibling;
+    btn.style.display = "none";
 
-    previous.parentNode.removeChild(previous);
-    btn.style.display = 'none';
-
-
+    checkNotifHidden(btn);
 
 }
 
@@ -100,12 +132,6 @@ function fillResult(btn) {
 
 }
 
-function populateStorage() {
-
-    localStorage.setItem('svg', 'off.svg');
-
-
-}
 
 function submitForm() {
 
@@ -280,11 +306,13 @@ toggleBtn[0].addEventListener('click', () => {
 
         toggleBtn[0].classList.remove("toggle-off");
 
+
     } else if (toggleBtn[0].classList.contains("toggle-btn")) {
 
         toggleBtn[0].src = 'images/SVG/off.svg';
 
         toggleBtn[0].classList.add("toggle-off");
+
 
     }
 
@@ -391,4 +419,132 @@ const mobileUser = new Chart(mu, {
         }
 
     }
+});
+
+/**************************
+ **************************
+ ****   LOCAL STORAGE  ****
+ **************************
+ **************************/
+
+if (localStorage.getItem('firstLoad') == undefined) {
+
+    localStorage.setItem('firstLoad', 'no');
+    localStorage.setItem('emailNotif', 'off');
+    localStorage.setItem('publicProfile', 'off');
+    localStorage.setItem('timezone', 'default');
+
+}
+
+sessionStorage.setItem('emailNotif', `${localStorage.getItem('emailNotif')}`);
+sessionStorage.setItem('publicProfile', `${localStorage.getItem('publicProfile')}`);
+sessionStorage.setItem('timezone', `${localStorage.getItem('timezone')}`);
+
+settings();
+
+function settings() {
+
+    if (localStorage.getItem('emailNotif') == 'off') {
+
+        toggleBtn[0].src = 'images/SVG/off.svg';
+
+    } else {
+
+        toggleBtn[0].src = 'images/SVG/on.svg';
+
+    }
+
+    if (localStorage.getItem('publicProfile') == 'off') {
+
+        toggleBtn[1].src = 'images/SVG/off.svg';
+
+    } else {
+
+        toggleBtn[1].src = 'images/SVG/on.svg';
+
+    }
+
+    if (localStorage.getItem('timezone') == 'default') {
+
+        tzOptions[0].selected = 'selected';
+
+    } else {
+
+        tzOptions[0].removeAttribute('selected');
+
+    }
+
+    for (let i = 0; i < tzOptions.length; i++) {
+
+        if (tzOptions[i].value == localStorage.getItem('timezone')) {
+
+            tzOptions[i].setAttribute('selected', 'selected');
+
+        } else {
+
+            tzOptions[i].removeAttribute('selected');
+        }
+    }
+
+}
+
+emailNotif.addEventListener('click', () => {
+
+
+    if (sessionStorage.getItem('emailNotif') == 'off') {
+
+        sessionStorage.setItem('emailNotif', 'on');
+        toggleBtn[0].src = 'images/SVG/on.svg';
+
+    } else {
+
+        sessionStorage.setItem('emailNotif', 'off');
+        toggleBtn[0].src = 'images/SVG/off.svg';
+
+    }
+
+
+});
+
+publicProfile.addEventListener('click', () => {
+
+
+    if (sessionStorage.getItem('publicProfile') == 'off') {
+
+        sessionStorage.setItem('publicProfile', 'on');
+        toggleBtn[1].src = 'images/SVG/on.svg';
+
+    } else {
+
+        sessionStorage.setItem('publicProfile', 'off');
+        toggleBtn[1].src = 'images/SVG/off.svg';
+
+    }
+
+
+});
+
+timezone.addEventListener('click', (e) => {
+    let tzOption = e.target.value;
+    if (tzOption == '' || tzOption == undefined) {
+        sessionStorage.setItem('timezone', 'default');
+    } else {
+        sessionStorage.setItem('timezone', tzOption);
+    }
+});
+
+saveBtn.addEventListener('click', () => {
+
+    for (const key in sessionStorage) {
+        localStorage.setItem(`${key}`, `${sessionStorage[key]}`);
+    }
+
+})
+
+clearBtn.addEventListener('click', () => {
+
+    localStorage.setItem('emailNotif', 'off');
+    localStorage.setItem('publicProfile', 'off');
+    localStorage.setItem('timezone', 'default');
+    settings();
 });

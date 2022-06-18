@@ -34,21 +34,21 @@
             </div>
 
             <div id="noti-tray-wrapper">
-                <div class="notification">
+                <div class="notification" onclick="removeNoti(this)">
                     <div class="noti-tray">You have unread messages </div>
-                    <div class="noti-tray-btn" id="n1" onclick="removeNoti(this)">x</div>
+                    <div class="noti-tray-btn" id="n1">x</div>
                 </div>
-                <div class="notification">
+                <div class="notification" onclick="removeNoti(this)">
                     <div class="noti-tray">You have unread messages </div>
-                    <div class="noti-tray-btn" id="n2" onclick="removeNoti(this)">x</div>
+                    <div class="noti-tray-btn" id="n2">x</div>
                 </div>
-                <div class="notification">
+                <div class="notification" onclick="removeNoti(this)">
                     <div class="noti-tray">You have unread messages </div>
-                    <div class="noti-tray-btn" id="n3" onclick="removeNoti(this)">x</div>
+                    <div class="noti-tray-btn" id="n3">x</div>
                 </div>
-                <div class="notification">
+                <div class="notification" onclick="removeNoti(this)">
                     <div class="noti-tray">You have unread messages </div>
-                    <div class="noti-tray-btn" id="n4" onclick="removeNoti(this)">x</div>
+                    <div class="noti-tray-btn" id="n4">x</div>
                 </div>
             </div>
         </header>
@@ -334,14 +334,14 @@
             <div class="settings-wrapper">
                 <div id="email-notif">Send Email Notifications</div>
                 <div class="btn-wrapper">
-                    <img class="toggle-btn" src="images/SVG/on.svg" alt="">
+                    <img class="toggle-btn" id="email-setting" src="images/SVG/on.svg" alt="">
                 </div>
             </div>
 
             <div class="settings-wrapper">
                 <div id="profile-vis">Set Profile to Public</div>
                 <div class="btn-wrapper">
-                    <img class="toggle-btn" src="images/SVG/on.svg" alt="">
+                    <img class="toggle-btn" id="public-profile" src="images/SVG/on.svg" alt="">
                 </div>
             </div>
 
@@ -357,8 +357,8 @@
             </div>
 
             <div class="settings-button-wrapper">
-                <button class="setting-btn save" type="submit" onclick="populateStorage()">Save</button>
-                <button class="setting-btn clear" type="reset">Clear</button>
+                <button class="setting-btn save" id="save-btn" type="submit">Save</button>
+                <button class="setting-btn clear" id="clear-btn" type="reset">Clear</button>
             </div>
 
         </div>
